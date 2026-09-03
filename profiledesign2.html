@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhi Kavaiya | Personal Digital Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --cream: #FDFBF7;
+            --indigo: #1E1B4B;
+            --yellow: #FACC15;
+            --beige: #F5F1E8;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--indigo);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/p6.png');
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .editorial-shadow {
+            box-shadow: 20px 20px 60px rgba(30, 27, 75, 0.05);
+        }
+
+        .sticky-nav {
+            backdrop-filter: blur(10px);
+            background-color: rgba(253, 251, 247, 0.8);
+        }
+
+        .post-img-fixed {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+
+        .cert-img-fixed {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.75rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: var(--beige);
+            border-radius: 1.5rem;
+        }
+
+        /* Pulse effect for circular profile */
+        @keyframes pulse-border {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 0.4; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+        .profile-pulse {
+            animation: pulse-border 3s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="grain-overlay"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 sticky-nav border-b border-indigo-900/5 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="font-bold tracking-tighter text-xl serif">VIDHI KAVAIYA</div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="#home" class="hover:text-yellow-600 transition">Home</a>
+                <a href="#about" class="hover:text-yellow-600 transition">About</a>
+                <a href="#activity" class="hover:text-yellow-600 transition">Activity</a>
+                <a href="#projects" class="hover:text-yellow-600 transition">Projects</a>
+                <a href="#skills" class="hover:text-yellow-600 transition">Skills</a>
+                <a href="#certifications" class="hover:text-yellow-600 transition">Certifications</a>
+            </div>
+            <a href="https://www.linkedin.com/in/vidhi-kavaiya-839baa359/" class="bg-yellow-400 px-6 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition-all flex items-center gap-2">
+                Let's Connect. <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <!-- HERO SECTION -->
+    <section id="home" class="pt-32 pb-20 px-6 max-w-[1600px] mx-auto min-h-screen flex flex-col justify-center overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            
+            <!-- Hero Text -->
+            <div class="z-10 text-center lg:text-left order-2 lg:order-1">
+                <div class="inline-block px-4 py-1 rounded-full border border-indigo-900/10 text-xs mb-6 tracking-widest uppercase bg-white/50">
+                    IT Student • Developer • AI Enthusiast
+                </div>
+                <h1 class="text-6xl md:text-8xl xl:text-9xl leading-none font-semibold mb-6">
+                    Hi, I'm <br><span class="text-yellow-500 italic">Vidhi</span> Kavaiya.
+                </h1>
+                <p class="text-xl md:text-2xl text-indigo-900/70 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
+                    I build digital experiences at the intersection of development and Artificial Intelligence.
+                </p>
+                
+                <div class="flex flex-col items-center lg:items-start gap-8">
+                    <a href="#projects" class="w-fit inline-flex bg-indigo-950 text-white px-10 py-5 rounded-full font-bold hover:scale-105 transition-transform items-center gap-2 shadow-xl">
+                        Explore My Work <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+
+                    <div class="flex gap-4 mt-4">
+                        <div class="px-8 py-5 bg-yellow-400 rounded-3xl editorial-shadow text-center">
+                            <p class="text-4xl font-bold serif">05+</p>
+                            <p class="text-[10px] uppercase font-black tracking-widest">Projects</p>
+                        </div>
+                        <div class="px-8 py-5 bg-indigo-950 text-white rounded-3xl editorial-shadow text-center">
+                            <p class="text-4xl font-bold serif">12+</p>
+                            <p class="text-[10px] uppercase font-black tracking-widest">Certificates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ENLARGED PROFILE IMAGE CONTAINER -->
+            <div class="flex justify-center items-center order-1 lg:order-2">
+                <div class="relative w-72 h-72 md:w-[500px] md:h-[500px] xl:w-[550px] xl:h-[550px] flex items-center justify-center">
+                    
+                    <!-- Decorative Background Pulse -->
+                    <div class="absolute inset-[-20px] rounded-full bg-yellow-400/10 profile-pulse"></div>
+                    
+                    <!-- Main Circular Image -->
+                    <div class="relative w-full h-full rounded-full overflow-hidden border-[15px] border-white shadow-2xl z-10">
+                        <img src="profile.jpeg" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- ENLARGED ROTATING TEXT IN FRONT -->
+                      <!-- ROTATING TEXT IN FRONT -->
+                    <div class="absolute -bottom-6 -left-6 md:-bottom-10 md:-left-10 w-44 h-44 md:w-56 md:h-56 z-20">
+                        <svg viewBox="0 0 100 100" class="w-full h-full animate-[spin_12s_linear_infinite]">
+                            <defs><path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs>
+                            <circle cx="50" cy="50" r="38" fill="white" />
+                            <text font-size="8" font-weight="bold" fill="var(--indigo)">
+                                <textPath href="#circlePath">BUILD • LEARN • CREATE • EXPLORE • </textPath>
+                            </text>
+                        </svg>
+                    </div>
+                
+                    
+                    <!-- Extra Decorative Ring -->
+                    <div class="absolute inset-0 rounded-full border-2 border-dashed border-indigo-900/10 animate-[spin_30s_linear_infinite]"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+	
+	
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="py-24 bg-white/50 border-y border-indigo-900/5 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-bold mb-8 italic">About Me</h2>
+            <div class="space-y-6 text-xl leading-relaxed opacity-90">
+                <p>I am an Information Technology student interested in software development, web technologies, Android development and Artificial Intelligence. I enjoy transforming ideas into practical projects and continuously improving my programming and problem-solving skills.</p>
+                <p>Currently pursuing my Bachelor's at GEC Modasa, I focus on building tools that solve real-world problems using Java, Python, and Web Frameworks. Have worked on projects including a restaurant website, chatbot-integrated websites, an AI-powered book discovery platform, a LinkedIn Profile Optimization Agent, and a Role-Based Rental Home Finder application.
+
+My interests include modern web technologies, UI/UX design, API integration, Agentic AI, and Prompt Engineering. I am always eager to explore new tools and technologies that help create better digital experiences.</p>
+            </div>
+        </div>
+    </section>
+
+
+<!-- EDUCATION -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-5xl font-bold mb-16 text-center italic">Education</h2>
+        <div class="space-y-12">
+            <!-- EDU 01 -->
+            <div class="grid md:grid-cols-12 gap-6 items-center group">
+                <div class="md:col-span-3 text-7xl font-bold serif opacity-10 group-hover:opacity-100 group-hover:text-yellow-500 transition-all">2029</div>
+                <div class="md:col-span-9 border-l-2 border-indigo-900/10 pl-8 py-4">
+                    <h3 class="text-2xl font-bold">GOVERNMENT ENGINEERING COLLEGE, MODASA</h3>
+                    <p class="text-lg opacity-70">Bachelor's in Information Technology</p>
+                    <p class="text-sm mt-2 text-yellow-600 font-bold uppercase tracking-widest">Jul 2026 – Jul 2029 (Current)</p>
+                </div>
+            </div>
+            <!-- EDU 02 -->
+            <div class="grid md:grid-cols-12 gap-6 items-center group">
+                <div class="md:col-span-3 text-7xl font-bold serif opacity-10 group-hover:opacity-100 group-hover:text-yellow-500 transition-all">2026</div>
+                <div class="md:col-span-9 border-l-2 border-indigo-900/10 pl-8 py-4">
+                    <h3 class="text-2xl font-bold">GOVERNMENT POLYTECHNIC FOR GIRLS, AHMEDABAD</h3>
+                    <p class="text-lg opacity-70">Diploma in Information Technology</p>
+                    <p class="text-sm mt-2 text-indigo-400 font-bold uppercase tracking-widest">Aug 2023 – Aug 2026 (Completed)</p>
+                </div>
+            </div>
+			
+			
+			<!-- EDU 03 -->
+            <div class="grid md:grid-cols-12 gap-6 items-center group">
+                <div class="md:col-span-3 text-7xl font-bold serif opacity-10 group-hover:opacity-100 group-hover:text-yellow-500 transition-all">2023</div>
+                <div class="md:col-span-9 border-l-2 border-indigo-900/10 pl-8 py-4">
+                    <h3 class="text-2xl font-bold">HEBRON SECONDARY SCHOOL</h3>
+                    <p class="text-sm mt-2 text-indigo-400 font-bold uppercase tracking-widest">(Completed)</p>
+                </div>
+            </div>
+			
+        </div>
+    </section>
+	
+	
+	
+
+    <!-- SOCIAL HIGHLIGHTS SECTION -->
+    <section id="activity" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-5xl font-bold italic mb-12">Social Highlights(POSTS)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+		
+            <div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+    <p class="text-[10px] font-bold uppercase tracking-widest text-yellow-600 mb-4">
+        UI/UX Design Project
+    </p>
+
+    <img src="shoes.png" alt="UI/UX Website Design" class="post-img-fixed mb-4">
+
+    <h4 class="font-bold text-lg mb-2">Website UI/UX Design</h4>
+
+    <p class="text-sm opacity-70 mb-4 line-clamp-3">
+        A responsive website UI/UX design created using <strong>ChatGPT</strong> and <strong>Editor X</strong> as part of my SkillUp certification from Simplilearn, focusing on responsive layouts, navigation, and visual storytelling.
+    </p>
+
+    <a href="https://www.linkedin.com/posts/vidhi-kavaiya-839baa359_uiuxdesign-webdesign-portfolio-activity-7384630371918761984-_dzg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFlYBi0BPh32JczQet-CJZawYfl-3BGGEbg" 
+	target="_blank" class="text-xs font-bold underline">View Project</a>
+	
+	
+</div>
+            <div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-yellow-600 mb-4">Achievement</p>
+                <img src="deloti.png" alt="Deloitte" class="post-img-fixed mb-4">
+                <h4 class="font-bold text-lg mb-2">Deloitte Data Simulation</h4>
+                <p class="text-sm opacity-70 mb-4 line-clamp-3">Completed the Data Analytics Simulation focusing on business insights and data strategy.</p>
+                <a href="https://www.linkedin.com/posts/vidhi-kavaiya-839baa359_im-happy-to-share-that-ive-obtained-a-new-activity-7347504992339075074-pIu9" target="_blank" class="text-xs font-bold underline">View Credential</a>
+            </div>
+            <div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-yellow-600 mb-4">Media Coverage</p>
+                <img src="publish.png" alt="News" class="post-img-fixed mb-4">
+                <h4 class="font-bold text-lg mb-2">Newspaper Feature</h4>
+                <p class="text-sm opacity-70 mb-4 line-clamp-3">Our IoT Smart Air Pollution project featured in Gujarat Samachar Plus.</p>
+                <a href="https://www.linkedin.com/posts/vidhi-kavaiya-839baa359_ggp-iot-airpollution-activity-7403699674068746240-pnGb" target="_blank" class="text-xs font-bold underline">Read Article</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-24 bg-indigo-950 text-white px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Programming Box -->
+            <div class="group p-8 border border-white/10 rounded-3xl transition-all duration-500 hover:border-yellow-400 hover:bg-white/5 hover:-translate-y-2">
+                <div class="flex gap-3 mb-6 grayscale group-hover:grayscale-0 transition-all duration-500">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-6 h-6" alt="Java">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-6 h-6" alt="Python">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" class="w-6 h-6" alt="C">
+                </div>
+                <h4 class="font-bold mb-6 text-yellow-400 uppercase text-xs tracking-[0.2em]">Programming</h4>
+                <ul class="space-y-3 opacity-70 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-sm group-hover:rotate-45 transition-transform"></span> Java</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-sm group-hover:rotate-45 transition-transform"></span> Python</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-sm group-hover:rotate-45 transition-transform"></span> SQL (SQLite)</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-sm group-hover:rotate-45 transition-transform"></span> C Language</li>
+                </ul>
+            </div>
+
+            <!-- Web Development Box -->
+            <div class="group p-8 border border-white/10 rounded-3xl transition-all duration-500 hover:border-yellow-400 hover:bg-white/5 hover:-translate-y-2">
+                <div class="flex gap-3 mb-6 grayscale group-hover:grayscale-0 transition-all duration-500">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-6 h-6" alt="HTML">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-6 h-6" alt="CSS">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" class="w-6 h-6 invert group-hover:invert-0" alt="Flask">
+                </div>
+                <h4 class="font-bold mb-6 text-yellow-400 uppercase text-xs tracking-[0.2em]">Web Development</h4>
+                <ul class="space-y-3 opacity-70 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-sm group-hover:rotate-45 transition-transform"></span> HTML/CSS</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-sm group-hover:rotate-45 transition-transform"></span> Web Designing</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-sm group-hover:rotate-45 transition-transform"></span> Flask</li>
+                </ul>
+            </div>
+
+            <!-- AI & Data Box -->
+            <div class="group p-8 border border-white/10 rounded-3xl transition-all duration-500 hover:border-yellow-400 hover:bg-white/5 hover:-translate-y-2">
+                <div class="flex gap-3 mb-6 text-yellow-400/50 group-hover:text-yellow-400 transition-colors">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                    <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                </div>
+                <h4 class="font-bold mb-6 text-yellow-400 uppercase text-xs tracking-[0.2em]">AI & Data</h4>
+                <ul class="space-y-3 opacity-70 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-sm group-hover:rotate-45 transition-transform"></span> Prompt Eng.</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-sm group-hover:rotate-45 transition-transform"></span> Generative AI</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-sm group-hover:rotate-45 transition-transform"></span> Data Analysis</li>
+                </ul>
+            </div>
+
+            <!-- Mobile & Tools Box -->
+            <div class="group p-8 border border-white/10 rounded-3xl transition-all duration-500 hover:border-yellow-400 hover:bg-white/5 hover:-translate-y-2">
+                <div class="flex gap-3 mb-6 grayscale group-hover:grayscale-0 transition-all duration-500">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" class="w-6 h-6" alt="Android">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-6 h-6 invert group-hover:invert-0" alt="GitHub">
+                    <i data-lucide="figma" class="w-6 h-6 text-white"></i>
+                </div>
+                <h4 class="font-bold mb-6 text-yellow-400 uppercase text-xs tracking-[0.2em]">Mobile & Tools</h4>
+                <ul class="space-y-3 opacity-70 text-sm">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-sm group-hover:rotate-45 transition-transform"></span> Android Studio</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-sm group-hover:rotate-45 transition-transform"></span> GitHub</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-yellow-400 rounded-sm group-hover:rotate-45 transition-transform"></span> UI/UX (Figma)</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+	
+	
+	<!-- PROJECTS -->
+    <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="mb-20">
+            <h2 class="text-6xl font-bold italic mb-4">Selected Projects</h2>
+            <p class="text-xl opacity-60">Things I've built, explored and learned from.</p>
+        </div>
+
+        <div class="space-y-32">
+            <!-- Project 01 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7">
+                    <div class="video-container editorial-shadow">
+                           <iframe 
+							class="absolute top-0 left-0 w-full h-full rounded-2xl" 
+							src="Screen.mp4" 
+							title="Project Demo" 
+							frameborder="0" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+							allowfullscreen>
+							</iframe>
+						
+                    </div>
+              
+                </div>
+                <div class="lg:col-span-5">
+                    <span class="serif text-4xl opacity-20">01</span>
+                    <h3 class="text-3xl font-bold mt-2 mb-4">ANDROID HOME RENTAL SYSTEM</h3>
+                    <p class="text-lg opacity-80 mb-6">An Android-based home rental application designed to allow users to browse and manage rental property advertisements.</p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="text-xs px-3 py-1 bg-yellow-400 rounded-full font-bold">Java</span>
+                        <span class="text-xs px-3 py-1 bg-yellow-400 rounded-full font-bold">Android Studio</span>
+                        <span class="text-xs px-3 py-1 bg-yellow-400 rounded-full font-bold">SQLite</span>
+                    </div>
+                    <ul class="space-y-2 text-sm opacity-70 mb-8 italic">
+                        <li>• Property Listing using RecyclerView</li>
+                        <li>• Navigation Drawer Dashboard</li>
+                        <li>• Secure User Authentication</li>
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <!-- Project 02 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <span class="serif text-4xl opacity-20">02</span>
+                    <h3 class="text-3xl font-bold mt-2 mb-4">BOOKWORLD</h3>
+                    <p class="text-lg opacity-80 mb-4">A web-based book discovery platform that helps users search and explore books through categories and personalized features.</p>
+                    <p class="text-sm font-bold text-yellow-600 mb-6 underline">Presented at AI Fest — Team of 4</p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="text-xs px-3 py-1 bg-yellow-400 rounded-full font-bold">Flask</span>
+                        <span class="text-xs px-3 py-1 bg-yellow-400 rounded-full font-bold">Google Books API</span>
+                        <span class="text-xs px-3 py-1 bg-yellow-400 rounded-full font-bold">AI Chatbot</span>
+                    </div>
+                    <ul class="space-y-2 text-sm opacity-70 mb-8 italic">
+                        <li>• AI-style Chatbot Interface</li>
+                        <li>• Alternative Ending Generator</li>
+                        <li>• Free/Premium Book Filtering</li>
+                    </ul>
+                    
+                </div>
+                <div class="lg:col-span-7 order-1 lg:order-2">
+                    <div class="video-container editorial-shadow">
+                            <iframe 
+							class="absolute top-0 left-0 w-full h-full rounded-2xl" 
+							src="BookWorld.mp4" 
+							title="Project Demo" 
+							frameborder="0" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+							allowfullscreen>
+							</iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 03 -->
+            <!--<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7">
+                <h3 class="text-4xl font-bold mt-2 mb-6 uppercase tracking-tighter">AI-Powered LinkedIn Profile Analysis</h3>
+                <div class="video-container editorial-shadow mb-8">
+                    
+                        <iframe 
+							class="absolute top-0 left-0 w-full h-full rounded-2xl" 
+							src="Screen2.mp4" 
+							title="Project Demo" 
+							frameborder="0" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+							allowfullscreen>
+							</iframe>
+                    </div>
+            </div>
+                <p class="text-xl opacity-80 mb-8 max-w-2xl mx-auto">Analyze LinkedIn profiles and provide recommendations for improving professional presence and career growth using AI.</p>
+                <div class="flex justify-center gap-4">
+                    <span class="bg-beige px-6 py-2 rounded-full text-sm font-bold border border-indigo-900/5">Profile Optimization</span>
+                    <span class="bg-beige px-6 py-2 rounded-full text-sm font-bold border border-indigo-900/5">Headline Recs</span>
+                </div>--!>
+				
+				
+				 <!-- Project 03 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7">
+                    <div class="video-container editorial-shadow">
+                           <iframe 
+							class="absolute top-0 left-0 w-full h-full rounded-2xl" 
+							src="Screen2.mp4" 
+							title="Project Demo" 
+							frameborder="0" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+							allowfullscreen>
+							</iframe>
+						
+                    </div>
+              
+                </div>
+                <div class="lg:col-span-5">
+                    <span class="serif text-4xl opacity-20">03</span>
+                    <h3 class="text-3xl font-bold mt-2 mb-4">AI-Powered LinkedIn Profile Analysis</h3>
+                    <p class="text-lg opacity-80 mb-6">Analyze LinkedIn profiles and provide recommendations for improving professional presence and career growth using AI.</p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="text-xs px-3 py-1 bg-yellow-400 rounded-full font-bold">Java</span>
+                        <span class="text-xs px-3 py-1 bg-yellow-400 rounded-full font-bold">Android Studio</span>
+                        <span class="text-xs px-3 py-1 bg-yellow-400 rounded-full font-bold">SQLite</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+				
+				<!-- Project 02 -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <span class="serif text-4xl opacity-20">04</span>
+                    <h3 class="text-3xl font-bold mt-2 mb-4">Verde & Grano</h3>
+                    <p class="text-lg opacity-80 mb-4">
+    An AI-powered web experience created using <strong>Google AI Studio</strong>, showcasing how AI can transform ideas into functional websites within seconds. The project was customized with an interactive <strong>AI chatbot</strong>, refined layouts, updated content, and an enhanced user experience.
+</p>
+
+<p class="text-sm font-bold text-yellow-600 mb-6 underline">
+    Built with AI — Customized & Enhanced
+</p>
+
+<div class="flex flex-wrap gap-2 mb-8">
+    <span class="text-xs px-3 py-1 bg-yellow-400 rounded-full font-bold">Google AI Studio</span>
+    <span class="text-xs px-3 py-1 bg-yellow-400 rounded-full font-bold">AI Chatbot</span>
+    <span class="text-xs px-3 py-1 bg-yellow-400 rounded-full font-bold">Web Development</span>
+</div>
+
+<ul class="space-y-2 text-sm opacity-70 mb-8 italic">
+    <li>• AI-generated Website Creation</li>
+    <li>• Custom Layout & Content Refinement</li>
+    <li>• Interactive AI-Powered Chatbot</li>
+</ul>
+                    
+                </div>
+                <div class="lg:col-span-7 order-1 lg:order-2">
+                    <div class="video-container editorial-shadow">
+                            <iframe 
+							class="absolute top-0 left-0 w-full h-full rounded-2xl" 
+							src="rest.mp4" 
+							title="Project Demo" 
+							frameborder="0" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+							allowfullscreen>
+							</iframe>
+                    </div>
+                </div>
+            </div>
+		
+				
+        </div>
+        </div>
+    </section>
+
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="py-24 bg-beige/30 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold mb-16 serif italic text-center">Learning & Certifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                    <img src="delottie.png" class="cert-img-fixed mb-4">
+                    <h4 class="font-bold text-lg leading-tight mb-2">Data Analytics Simulation</h4>
+                    <p class="text-[10px] uppercase font-bold text-yellow-600 mb-3">Deloitte Australia</p>
+                    <p class="text-xs opacity-70 italic mb-4">Hands-on experience in analyzing data sets for business strategy.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                    <img src="campuscrew.png" class="cert-img-fixed mb-4">
+                    <h4 class="font-bold text-lg leading-tight mb-2">Google Gemini QuizOff</h4>
+                    <p class="text-[10px] uppercase font-bold text-yellow-600 mb-3">Unstop / Google</p>
+                    <p class="text-xs opacity-70 italic mb-4">Evaluation of knowledge on AI models and applications.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                    <img src="campuscrew.png" class="cert-img-fixed mb-4">
+                    <h4 class="font-bold text-lg leading-tight mb-2">QuizOff 100K Special</h4>
+                    <p class="text-[10px] uppercase font-bold text-yellow-600 mb-3">CampusCrew</p>
+                    <p class="text-xs opacity-70 italic mb-4">Participation in the 100K special AI certificate distribution.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                    <img src="icat.png" class="cert-img-fixed mb-4">
+                    <h4 class="font-bold text-lg leading-tight mb-2">ICAT Certification</h4>
+                    <p class="text-[10px] uppercase font-bold text-yellow-600 mb-3">ID: CIT-P-3410110</p>
+                    <p class="text-xs opacity-70 italic mb-4">Professional certification in Information & Communication Technology.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                    <img src="Ai.png" class="cert-img-fixed mb-4">
+                    <h4 class="font-bold text-lg leading-tight mb-2">AI Festival 2.0 Debate</h4>
+                    <p class="text-[10px] uppercase font-bold text-yellow-600 mb-3">GP Ahmedabad</p>
+                    <p class="text-xs opacity-70 italic mb-4">Technical debates regarding AI ethics and agentic technologies.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                    <img src="tops.png" class="cert-img-fixed mb-4">
+                    <h4 class="font-bold text-lg leading-tight mb-2">AI Animation & Design</h4>
+                    <p class="text-[10px] uppercase font-bold text-yellow-600 mb-3">Tops Technologies</p>
+                    <p class="text-xs opacity-70 italic mb-4">AI-driven tools for digital animations and creative assets.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                    <img src="GGP.jpeg" class="cert-img-fixed mb-4">
+                    <h4 class="font-bold text-lg leading-tight mb-2">Future Ready AI Tools</h4>
+                    <p class="text-[10px] uppercase font-bold text-yellow-600 mb-3">GGP IT</p>
+                    <p class="text-xs opacity-70 italic mb-4">Automation frameworks and modern productivity tools.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                    <img src="campusquest.png" class="cert-img-fixed mb-4">
+                    <h4 class="font-bold text-lg leading-tight mb-2">Future-Proof Skills</h4>
+                    <p class="text-[10px] uppercase font-bold text-yellow-600 mb-3">Naukri Campus</p>
+                    <p class="text-xs opacity-70 italic mb-4">Training on essential skills for the digital job market.</p>
+                </div>
+				
+				
+				 <div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                    <img src="BE10x.png" class="cert-img-fixed mb-4">
+                    <h4 class="font-bold text-lg leading-tight mb-2">Be10x AI Tools Workshop </h4>
+                    <p class="text-[10px] uppercase font-bold text-yellow-600 mb-3">Be10x</p>
+                    <p class="text-xs opacity-70 italic mb-4">I explored cutting-edge AI tools and their practical applications.</p>
+                </div>
+				
+				<div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                    <img src="simplilearn.png" class="cert-img-fixed mb-4">
+                    <h4 class="font-bold text-lg leading-tight mb-2">Website UI/UX designing using ChatGPT</h4>
+                    <p class="text-[10px] uppercase font-bold text-yellow-600 mb-3">Simplilearn|SkillUP</p>
+                    <p class="text-xs opacity-70 italic mb-4"> I explored how to design and build interactive websites using playground AI , ChatGPT, and Editor X </p>
+                </div>
+				
+				<div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                    <img src="simplilearn2.png" class="cert-img-fixed mb-4">
+                    <h4 class="font-bold text-lg leading-tight mb-2">Introduction to Figma Online Courses</h4>
+                    <p class="text-[10px] uppercase font-bold text-yellow-600 mb-3">Simplilearn|SkillUP</p>
+                    <p class="text-xs opacity-70 italic mb-4"> have learned how to make mockups befor e doing any coding to let know how would it will be look in future using figma.</p>
+                </div>
+				
+				<div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                    <img src="google.png" class="cert-img-fixed mb-4">
+                    <h4 class="font-bold text-lg leading-tight mb-2">Introduction to Large Language Models</h4>
+                    <p class="text-[10px] uppercase font-bold text-yellow-600 mb-3">Simplilearn|SkillUP</p>
+                    <p class="text-xs opacity-70 italic mb-4">I explored cutting-edge AI tools and their practical applications.</p>
+                </div>
+				
+				<div class="bg-white p-6 rounded-3xl editorial-shadow border border-indigo-900/5">
+                    <img src="HP.png" class="cert-img-fixed mb-4">
+                    <h4 class="font-bold text-lg leading-tight mb-2">AI for Business Pofessionals</h4>
+                    <p class="text-[10px] uppercase font-bold text-yellow-600 mb-3">HP life</p>
+                    <p class="text-xs opacity-70 italic mb-4">This course went beyond theory and offered a practical roadmap for applying AI in everyday work — from automating repetitive tasks to improving decision-making and creativity, </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <!--<section id="contact" class="px-6 py-24">
+        <div class="max-w-7xl mx-auto bg-yellow-400 rounded-editorial p-12 md:p-24 text-center editorial-shadow">
+            <h2 class="text-6xl md:text-8xl font-bold serif mb-8">Contact Me</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="mailto:kavavidhi2008@gmail.com" class="bg-indigo-950 text-white px-10 py-4 rounded-full font-bold">Email Me</a>
+                <a href="https://www.linkedin.com/in/vidhi-kavaiya-839baa359/" class="bg-white text-indigo-950 px-10 py-4 rounded-full font-bold flex items-center gap-2">LinkedIn <i data-lucide="external-link" class="w-4 h-4"></i></a>
+				<a href="https://github.com/kavaiyavidhi" class="bg-indigo-950 text-white px-10 py-4 rounded-full font-bold">GitHub</a>
+				
+            </div>
+        </div>
+    </section>--!>
+	
+	<!-- CONTACT SECTION -->
+    <section id="contact" class="px-6 py-24">
+        <div class="max-w-7xl mx-auto bg-yellow-400 rounded-editorial p-12 md:p-24 text-center editorial-shadow">
+            <h2 class="text-6xl md:text-8xl font-bold serif mb-8 uppercase tracking-tighter">Let's Connect.</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                
+                <!-- Email Me -->
+                <a href="mailto:kavavidhi2008@gmail.com" class="bg-indigo-950 text-white px-10 py-4 rounded-full font-bold flex items-center gap-2 hover:scale-105 transition-transform shadow-lg">
+                    <i data-lucide="mail" class="w-5 h-5"></i> Email Me
+                </a>
+                
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/vidhi-kavaiya-839baa359/" target="_blank" class="bg-white text-indigo-950 px-10 py-4 rounded-full font-bold flex items-center gap-2 hover:scale-105 transition-transform shadow-lg">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
+                </a>
+                
+                <!-- GitHub -->
+                <a href="https://github.com/kavaiyavidhi" target="_blank" class="bg-indigo-950 text-white px-10 py-4 rounded-full font-bold flex items-center gap-2 hover:scale-105 transition-transform shadow-lg">
+                    <i data-lucide="github" class="w-5 h-5"></i> GitHub
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 border-t border-indigo-900/5 text-center">
+        <p class="serif font-bold text-2xl">VIDHI KAVAIYA</p>
+        <p class="text-xs opacity-40">© 2026 Vidhi Kavaiya • Information Technology</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
